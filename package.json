@@ -1,44 +1,45 @@
 {
-  "name": "aboutUs",
-  "version": "1.0.0",
-  "main": "backend",
-  "description": "Plugin for adding aboutUs | Terms and Conditions | FAQs etc",
-  "author": "Robins Gupta",
-  "authorEmail": "robinskumar73@gmail.com",
-  "routeExposure": "/aboutUs",
-  "staticFiles": {
-    "css": {
-        "exampleCss" : "/aboutUs/style/example.css"
-      },
-    "js": {
-      "aboutUsRoute": "/aboutUs/scripts/routes/aboutUs.js",
-      "aboutUsController": "/aboutUs/scripts/controllers/aboutUs.js"
-    },
-    "moduleDependencies":{
+    "name": "aboutUs",
+    "version": "1.0.0",
+    "main": "backend",
+    "description": "Plugin for adding aboutUs | Terms and Conditions | FAQs etc",
+    "author": "Robins Gupta",
+    "authorEmail": "robinskumar73@gmail.com",
+    "routeExposure": "/aboutUs",
+    "staticFiles": {
+        "css": {
+            "exampleCss": "/aboutUs/style/example.css"
+        },
+        "js": {
+            "aboutUsRoute": "/aboutUs/scripts/routes/aboutUs.js",
+            "aboutUsController": "/aboutUs/scripts/controllers/aboutUs.js"
+        },
+        "moduleDependencies": {
 
+        },
+        "settings": "/aboutUs/settings.js"
     },
-    "settings": "/aboutUs/settings.js"
-  },
-  "bodystructure": {
-    "asidebarHook": [],
-    "sidebarHook": [],
-    "headerHook": [],
-    "footerHook":[]
-  },
-  "databases": {
-  },
-  "pluginDepedencies": {
-     
-  },
-  "activate": true,
-  "services": {},
-  "dependencies": {},
-  "optionalDependencies": {},
-  "repository": {
-    "type": "",
-    "url": ""
-  },
-  "devDependencies": {
+    "bodystructure": {
+        "asidebarHook": [],
+        "sidebarHook": ["/aboutUs/views/sidebarHook.html"],
+        "headerHook": [],
+        "footerHook": []
+    },
+    "databases": {
+        "CompanyInfo": "CompanyInfo"
+    },
+    "pluginDepedencies": {
+        "email" :"^1.0.0"
+    },
+    "activate": true,
+    "services": {},
+    "dependencies": {},
+    "optionalDependencies": {},
+    "repository": {
+        "type": "",
+        "url": ""
+    },
+    "devDependencies": {
 
-  }
+    }
 }

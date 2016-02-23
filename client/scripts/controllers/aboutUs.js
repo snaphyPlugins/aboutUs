@@ -18,7 +18,7 @@ angular.module($snaphy.getModuleName())
 
         $snaphy.setDefaultTemplate(defaultTemplate);
         //Use Database.getDb(pluginName, PluginDatabaseName) to get the Database Resource.
-        $scope.data = {};
+        //$scope.data = {};
         //Save Data function..
         $scope.saveData = function(stateName, data){
             $scope.data.html = $scope.getHtmlData();

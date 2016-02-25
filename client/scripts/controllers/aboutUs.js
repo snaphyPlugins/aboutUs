@@ -21,6 +21,9 @@ angular.module($snaphy.getModuleName())
         //$scope.data = {};
         //Save Data function..
         $scope.saveData = function(stateName, data){
+            if($scope.data === undefined){
+                $scope.data = {};
+            }
             $scope.data.html = $scope.getHtmlData();
             if($scope.data.html && $scope.loaded){
                 if($scope.data.id === undefined ){

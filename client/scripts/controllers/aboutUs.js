@@ -17,6 +17,7 @@ angular.module($snaphy.getModuleName())
         //---------------------------------------------------------------------------------------
 
         $snaphy.setDefaultTemplate(defaultTemplate);
+        $scope.data = {};
         //Use Database.getDb(pluginName, PluginDatabaseName) to get the Database Resource.
         //$scope.data = {};
         //Save Data function..
@@ -38,7 +39,7 @@ angular.module($snaphy.getModuleName())
                         $timeout(function(){
                             $scope.data = value;
 
-                        });
+                        }, 5);
                     }, function(httpResp){
                         SnaphyTemplate.notify({
                             message: "Error updating data. Please try sometime later.",
@@ -82,8 +83,14 @@ angular.module($snaphy.getModuleName())
             }, function(value, respHeader){
                 $scope.loaded = true;
                 if(value.length){
-                    $scope.data = value[0];
-
+                    $timeout(function(){
+                        //console.log(value);
+                        for(var key in value[0]){
+                            if(value[0].hasOwnProperty(key)){
+                                $scope.data[key] = value[0][key];
+                            }
+                        }
+                    }, 0);
                 }
             }, function(httpResp){
                 console.error(httpResp);
